@@ -1,4 +1,3 @@
-Hemolink
 Hemolink é um aplicativo móvel desenvolvido em Python com a biblioteca Kivy. Ele facilita a gestão de doações de sangue e centros de coleta, permitindo aos usuários visualizar informações sobre estoques de sangue e localizar centros de doação.
 
 Funcionalidades
