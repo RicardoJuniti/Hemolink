@@ -225,6 +225,7 @@ class TelaHome(Screen):
 
 # Tela 2
 class TelaChat(Screen):
+    self.model = GPT4All(model_path)
     def __init__(self, **kwargs):
         super(TelaChat, self).__init__(**kwargs)
         #self.model = GPT4All(model_path)
@@ -314,13 +315,12 @@ class TelaChat(Screen):
 
     def call_chatbot_api(self, user_input):
         # Carrega o modelo
-        #model = GPT4All(model_path)
+        model = GPT4All(model_path)
         
 
         # Gera a resposta do modelo
         prompt = "Você é um assistente virtual português brasileiro especializado em saúde. Responda de forma objetiva, educada e em um parágrafo curto, somente em português sobre questões relacionadas à doação de sangue."
-        #resposta = model.generate(prompt + user_input)
-        resposta = "Você pode doar sangue após realizar uma tatuagem, desde que tenha decorrido pelo menos seis meses desde a data da procedura. Isso porque o processo de cicatrização e cura das lesões causadas pela tatuagem pode levar alguns meses para ser concluído, e é importante garantir que seu sangue esteja livre de qualquer substância ou agente potencialmente prejudicial à saúde dos pacientes receptores."
+        resposta = model.generate(prompt + user_input)
         respostacurta = resposta.split("\n\n")[0]
     
         respadicional =  "\n**Lembre-se**: As respostas podem ser imprecisas. É sempre recomendável consultar um banco de sangue ou um médico para informações mais precisas sobre sua saúde."
